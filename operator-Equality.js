@@ -5,7 +5,7 @@ console.log(' > Equality Operator | Strict [Same Type & Same Value]');
 console.log(1 === 1);
 console.log('1' === 1);
 
-console.log(' > Equality Operator | Lose []');
+console.log(' > Equality Operator | Loose []');
 console.log(1 == 1);
 console.log('1' == 1);          // This will conver the RHS number value to a string value
 console.log('1' == '1');        // Which will produce the same result as this.
