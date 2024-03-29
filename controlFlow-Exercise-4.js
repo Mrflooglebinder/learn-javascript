@@ -13,17 +13,15 @@ function checkSpeed(speed) {
     const maxPoints = 12;
     const points = Math.floor((speed - speedLimit) / kmPerPoint);
     
-    if (points >= maxPoints) {
-        console.log('License Suspended');
-    } else {
-        console.log('Points:', points);
-    }
-
-    // Check if the speed is less than the speed limit including the buffer
     if (speed < speedLimit + kmPerPoint) {
         console.log('Ok');
         return;
     }
+    
+    if (points >= maxPoints)
+        console.log('License Suspended');
+    else 
+        console.log('Points:', points);
 }
 
 for (let i = 60; i <= 135; i++) {
