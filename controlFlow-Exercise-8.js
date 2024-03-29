@@ -8,14 +8,12 @@
 console.log(sum(10));
 
 function sum(limit) {
-    const m3 = 3;
-    const m5 = 5;
-    let v1 = 0;
-    let v2 = 0;
+    let sum = 0;    
     
-    for (let i = 1; i <= limit; i++) {
-        if (i % m3 === 0) v1 += i;
-        if (i % m5 === 0) v2 += i;
+    for (let i = 0; i <= limit; i++) {
+        if (i % 3 === 0 || i % 5 === 0)
+            sum += i;
     }
-    console.log('Sum: ', v1 + v2);
+    
+    return sum;
 }
