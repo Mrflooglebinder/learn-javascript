@@ -27,10 +27,10 @@ function calculateGrade(marks) {
     // console.log(avg);
 
     if (avg < 60) mark = 'F';
-    else if (avg >= 60 && avg < 70) mark = 'D';
-    else if (avg >= 70 && avg < 80) mark = 'C';
-    else if (avg >= 80 && avg < 90) mark = 'B';
-    else mark = 'A';   
+    else if (avg < 70) mark = 'D';
+    else if (avg < 80) mark = 'C';
+    else if (avg < 90) mark = 'B';
+    else mark = 'A';
     grade = msg + mark;
     return grade;
 }
