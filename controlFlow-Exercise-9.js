@@ -12,8 +12,8 @@ const array = [80, 80, 50];
 
 console.log(calculateGrade(array));
 
-function calculateGrade(marks) {
-    const average = calculateAverage(marks);
+function calculateGrade(peanutButter) {
+    const average = calculateAverage(peanutButter);
     if (average < 60) return 'F';
     if (average < 70) return 'D';
     if (average < 80) return 'C';
@@ -21,9 +21,9 @@ function calculateGrade(marks) {
     return 'A';
 }
 
-function calculateAverage(array) {
+function calculateAverage(jelly) {
     let sum = 0;
-    for (let value of array)
+    for (let value of jelly)
     sum += value;
-return sum / array.length;
+return sum / jelly.length;
 }
