@@ -7,16 +7,16 @@
 // Not divisible by 3 or 5 => input
 // Not a number => 'Not a number'
 
-const output = fizzBuzz(31);
+const output = fizzBuzz('31');
 console.log(output);
 
 function fizzBuzz(input) {
+    if (typeof input !== 'number') return NaN; // Changed to type of 'input' & Moved to the top, if it is not a number then there is no point checking the rest...
     if (input % 3 === 0 && input % 5 === 0) return 'FizzBuzz';
-    else if (input % 3 !== 0 && input % 5 !== 0) return input;
-    else if (input % 3 === 0 && input % 5 !== 0) return 'Fizz';
-    else if (input % 3 !== 0 && input % 5 === 0) return 'Buzz';
-    else if (isNaN(input)) return 'Not a number';
-    else return 'error';
+    if (input % 3 === 0 && input % 5 !== 0) return 'Fizz';
+    if (input % 3 !== 0 && input % 5 === 0) return 'Buzz';
+    //if (input % 3 !== 0 && input % 5 !== 0) return input; --> // Refactored this line to the following line as it is cleaner 
+    return input; // Refactored
 }
 
 for (let i = 0; i < 100; i++) {
