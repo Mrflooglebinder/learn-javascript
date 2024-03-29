@@ -1,6 +1,6 @@
 // Control Flow Exercise 9
 
-const marks = [80, 80, 50];
+const array = [80, 80, 50];
 
 // Average = 70
 
@@ -10,27 +10,20 @@ const marks = [80, 80, 50];
 // 80-89: B
 // 90-100: A
 
-console.log(calculateGrade(marks));
+console.log(calculateGrade(array));
 
 function calculateGrade(marks) {
+    const average = calculateAverage(marks);
+    if (average < 60) return 'F';
+    if (average < 70) return 'D';
+    if (average < 80) return 'C';
+    if (average < 90) return 'B';
+    return 'A';
+}
+
+function calculateAverage(array) {
     let sum = 0;
-    let avg = sum / marks.length;
-    let mark = '';
-    const msg = 'Student Grade is: ';
-    let grade = '';
-
-    for (let mark of marks) {
-        sum += mark;
-        // console.log(sum);
-    } 
-    avg = sum / marks.length;
-    // console.log(avg);
-
-    if (avg < 60) mark = 'F';
-    else if (avg < 70) mark = 'D';
-    else if (avg < 80) mark = 'C';
-    else if (avg < 90) mark = 'B';
-    else mark = 'A';
-    grade = msg + mark;
-    return grade;
+    for (let value of array)
+    sum += value;
+return sum / array.length;
 }
