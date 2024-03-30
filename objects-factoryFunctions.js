@@ -1,26 +1,11 @@
+// Objects: Factory Functions
 
-const circle = {
-    radius: 1,
-    location: {
-        x: 1,
-        y: 1
-    },
-    isVisible: true,
-    draw: function() {
-        console.log('draw');
-    }
-};
-
-const circle2 = {
-    radius: 1,
-    location: {
-        x: 1,
-        y: 1
-    },
-    isVisible: true,
-    draw: function() {
-        console.log('draw');
-    }
-};
-
-circle.draw(1);
+// Factory Function
+function createCircle(radius) {
+    return {
+        radius,         
+        draw() {        
+            console.log('draw');
+        }
+    };
+}
