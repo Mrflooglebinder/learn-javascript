@@ -1,21 +1,8 @@
 // Constructor Functions
 
-// Factory Function
-// Use Camel Notation for factory functions: oneTwoThreeFour
-function createCircle(radius) {
-    return {
-        radius,         
-        draw() {        
-            console.log('draw');
-        }
-    };
-}
-
-const circle = createCircle(1);
-console.log(circle);
-
 // Constructor Functions
 // use Pascal Notation for constructor functions: OneTwoThreeFour
+// 'this' refers to the object that is executing the function
 function Circle(radius) {
     this.radius = radius;
     this .draw = function() {
@@ -24,5 +11,6 @@ function Circle(radius) {
 }
 
 const newCircle = new Circle(1);
+
 console.log(newCircle);
 console.log(newCircle.draw());
