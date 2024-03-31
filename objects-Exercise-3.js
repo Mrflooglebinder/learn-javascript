@@ -7,6 +7,7 @@ const zipCode = '12345';
 
 let address1 = new Address(street, city, zipCode);
 let address2 = new Address('7 OuttaTime Loop', 'Hill Valley', '12345');
+let address3 = address1;
 
 
 // Constructor Function
@@ -28,9 +29,28 @@ function areEqual(address1, address2) {
 
 console.log(areEqual(address1, address2));
 
+
 // Function to check if the two addresses are pointing to the same object & return true or false 
 function areSame(address1, address2) {
     return address1 === address2;
 }
 
 console.log(areSame(address1, address2));
+
+
+console.log(areSame(address1, address3));
+
+
+// this is the lecture solution to the areEqual function
+function areEqual2(address1, address2) {
+    return address1.street === address2.street &&
+    address1.city === address2.city &&
+    address1.zipCode === address2.zipCode;
+
+}
+console.log(areEqual2(address1, address2));
+
+
+
+
+
