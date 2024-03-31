@@ -12,4 +12,4 @@ function showAddress(address) {
         console.log(key, address[key]);
 }
 
-console.log(showAddress(address));
+showAddress(address);
