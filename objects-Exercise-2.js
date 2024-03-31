@@ -8,13 +8,13 @@
 //     zipCode: '12345'
 
 // Create variables for the address properties
-const street = '7 OuttaTime';
+const street = '7 OuttaTime Loop';
 const city = 'Hill Valley';
 const zipCode = '12345';
 
 
 // Factory Function
-function createAddress1(street, city, zipCode) {
+function Address(street, city, zipCode) {
     return {
         street,
         city,
@@ -23,18 +23,19 @@ function createAddress1(street, city, zipCode) {
 }
 
 // Call the Factory Function
-let address = createAddress1(street, city, zipCode);
+let address = Address(street, city, zipCode);
 console.log(address);
 
 
 // Constructor Function
-function createAddress2(street, city, zipCode) {
+// Remember constructor functions require PascalNotation - not - camelCase
+function CreateAddress2(street, city, zipCode) {
     this.street = street;
     this.city = city;
     this.zipCode = zipCode;
 }
 
 // Call the Constructor Function
-let address2 = new createAddress2(street, city, zipCode);
+let address2 = new Address(street, city, zipCode);
 console.log(address2);
 
