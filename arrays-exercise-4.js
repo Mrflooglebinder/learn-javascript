@@ -9,15 +9,14 @@ console.log(output);
 // console.error('Index is out of array')
 
 function move(array, index, offset) {
-    const newArr = [...array];
-    const newIndex = index + offset;
-    moveNum = array[index];
-    newArr.splice(index, 1);
-    newArr.splice(newIndex, 0, moveNum);
-    if (newIndex >= newArr.length || newIndex < 0) {
+    const position = index + offset;
+    if (position >= array.length || position < 0) {
         console.error('Index ',index ,'is out of array');
         return;
     }
-    return newArr;
+    const output = [...array];
+    const element = output.splice(index, 1)[0];
+    output.splice(position, 0, element);
+    return output;
 
 }
