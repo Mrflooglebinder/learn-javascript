@@ -9,10 +9,8 @@ console.log(count);
 
 function countOccurrences(array, searchElement) {
     let count = 0;
-        for (let i = 0; i < array.length; i++) {
-        if (array[i] === searchElement) {
-            count += array[i];
-        }
-    } 
+        for (let element of array) 
+        if (element === searchElement) 
+            count++;
     return count;
 }
