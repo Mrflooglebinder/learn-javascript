@@ -1,6 +1,7 @@
 // Arrays: Exercise 5 Part 2
+// To see the accumulator in action uncomment line 14...
 
-const numbers = [1, 2, 3, 4, 1, 1];
+const numbers = [1, 2, 3, 1, 1, 4, 5];
 // console.log(numbers);
 
 const count = countOccurrences2(numbers, 1);
@@ -8,15 +9,10 @@ const count = countOccurrences2(numbers, 1);
 console.log(count);
 
 function countOccurrences2(array, searchElement) {
-    const occurrences = [];
-        for (let i = 0; i < array.length; i++) {
-        if (array[i] === searchElement) {
-            occurrences.push(array[i]);
-        }
-    }
-    const count = occurrences.reduce(
-        (accumulator, currentValue) => accumulator + currentValue
-        );
-        
-    return count; 
+    return array.reduce((accumulator, current) => {
+        const occurrence = (current === searchElement) ? 1 : 0;
+        // console.log(accumulator, current, searchElement);
+        return accumulator + occurrence;
+    }, 0);
+
 }
