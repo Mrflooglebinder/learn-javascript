@@ -5,11 +5,10 @@ const numbers = arrayFromRange(-3, 7);
 console.log(numbers);
 
 // Create a function called arrayFromRange, it should take to params, min & max
-
+// Removed the curly braces from the for loop...
 function arrayFromRange(min, max) {
     const arr = [];
-    for (let i = min; i <= max; i++) {
+    for (let i = min; i <= max; i++) 
         arr.push(i);
-    }
     return arr;
 }
