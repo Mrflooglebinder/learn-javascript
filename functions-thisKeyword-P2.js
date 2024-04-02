@@ -44,8 +44,10 @@ const video3 = {
         // 'this' is referencing the video object - so it returns the tags array.
         this.tags.forEach(function(tag) {
             // to fix the above issue, we can use the bind method.
-            // console.log(this.title, tag);
-            console.log(this, tag);
+            
+            console.log(this.title, tag);
+            // console.log(this, tag);  // Switch commenting out with the above line to see the video object.
+
             // By setting 'this' in the 2nd argument of the forEach method to 'this', 
             // When we do,we are telling the forEach method to use 'this' as the reference to the video object.
         }, this);
