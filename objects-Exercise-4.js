@@ -11,9 +11,9 @@
 
 function blogPost(title, body, author) {
     return {
-        title: 'a',
-        body: 'b',
-        author: 'c',
+        title: title,
+        body: body,
+        author: author,
         views: 12,
         comments: [
             { author: 'a', body: 'b' },
