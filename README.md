@@ -238,16 +238,33 @@ Functions can be broken down to two main purposes, `performing a task` or `calcu
 
 - Total price of a product
 - Count number of list items
-- Deducting a discount from a price
-
+- Deducting a discount from a price  
 ---
 
-### Operators
+### The 'this' Keyword
+
+> `this` is a keyword, it refers to the object that is executing the current function.  
+
+**Rule of Thumbs**:  
+If the function is part of an object, we call that function a method.  
+So if that function is a method in an object, 'this' references that object itself.  
+`method` -> `object`  
+
+If the function is a regular function, then 'this' references the global object.  
+Meaning it references the:  
+`function` -> `global` (window, global)  
+---> window object in the browser &  
+---> global object in Node.js.  
+
+---
+---
+
+## Operators
 
 Operators are used to perform operations on variables and values. JavaScript has the following types of operators:
 arithmetic, assignment, comparison, Equality, Terinary, Logical, Logical Non-Boolean, Bitwise.  
 
-#### Arithmetic Operators
+### Arithmetic Operators
 
 Arithmetic operators are used to perform arithmetic operations on numbers.  
 Such as:  
@@ -282,7 +299,7 @@ console.log(--y);   // decrements y (10) down by 1 and then prints y (9) to cons
 
 ---
 
-#### Assignment Operators
+### Assignment Operators
 
 Assignment operators are used to assign values to variables.
 The `=` operator is used to assign a value to a variable.  
@@ -316,7 +333,7 @@ x *= 3;
 console.log(x); // result: 30
 ```
 
-#### Comparison Operators
+### Comparison Operators
 
 `JS` comparison operators are used to compare two values in a script. These operators return a Boolean value (`true` or `false`) depending on whether the comparison is `true`.  
 
@@ -336,7 +353,7 @@ console.log(x < 1); // Result: false
 console.log(x <= 1); // Result: true
 ```
 
-#### Equality Operators
+### Equality Operators
 
 There are two types of `Equality Operators` in JavaScript.  
 `Strict Equality` and `Loose Equality`.  
@@ -385,7 +402,7 @@ console.log(x !== 1); // Result: false
 
 ---
 
-#### Ternary Operators
+### Ternary Operators
 
 The `Ternary Operator` is a shorthand way of writing an `if...else` statement.
 It is used to assign a value to a variable based on a condition.
@@ -414,7 +431,7 @@ console.log(type); // Result: gold
 
 ---
 
-### Logical Operators
+## Logical Operators
 
 ### Logical And
 
@@ -545,7 +562,22 @@ In JavaScript, we have a the `if...else` and the `switch...case` that are used t
 
 `If...Else`: Will execute a block of code if a specified condition is true. If the condition is false, another block of code can be executed.  
 
+Explanation of the `If...Else` statement.
 
+```js
+if (condition) {
+    statement1
+} 
+else if (anotherCondition) {
+    statement2
+}
+else if (yetAnotherCondition) {
+    statement3
+}
+else {
+    statement4
+}
+```
 
 
 
@@ -554,3 +586,230 @@ In JavaScript, we have a the `if...else` and the `switch...case` that are used t
 
 
 `Switch...Case`: Will execute
+
+---
+
+## Loops
+
+> Loops are used to execute a block of code multiple times, until a specified condition is met.  
+> In JavaScript, we have the `for` loop, the `while` loop, the `do...while` > loop, the `for...in` loop, and the `for...of` loop.  
+
+### For Loop
+
+`For loops` are used to execute a block of code a specified number of times.  
+
+**Basic Syntax**:  
+
+```js
+for (initialExpression; condition; incrementExpression) {
+    statement
+}
+```
+
+**Example**: of a `For Loop` that will print the numbers 1 to 5 to the console.
+
+```js
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+```
+
+> **Note**: pay attention to the `Semi-colon`  
+> The `;` is used to separate the different parts of the `for` loop, as follows:  
+> initialExpression`;` condition`;` incrementExpression  
+> let i = 1`;` i <= 5`;` i++  
+
+**The Breakdown**:  
+`for` - The `For Statement`: This is the block of code that is executed for each iteration of the loop.  
+`let i = 1;` - The `Initial Expression`: This is where we initialize the loop variable. In this case, we are initializing `i` to 1.  
+`i <= 5;` - The `Condition`: This is the condition that is checked before each iteration of the loop. If the condition is true, the loop will continue to run. If the condition is false, the loop will stop.
+`i++` - The `Increment Expression`: This is where we increment the loop variable. In this case, we are incrementing `i` by 1 after each iteration of the loop.  
+`console.log(i);` - The `Statement`: This is the block of code that is executed for each iteration of the loop. In this case, we are printing the value of `i` to the console.  
+
+---
+
+### While Loop
+
+`While Loops` are used to execute a block of code as long as a specified condition is true.  
+
+**Basic Syntax**:  
+
+```js
+while (condition) {
+    statement
+}
+```
+
+**Example**: of a `While Loop` that will print the numbers 1 to 5 to the console.
+
+```js
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+```
+
+**The Breakdown**:  
+`let i = 1;` - The `Initial Expression`: This is where we initialize the loop variable. In this case, we are initializing `i` to 1.  
+`while` - The `While Statement`: This is the block of code that is executed as long as the condition is true.  
+`i <= 5;` - The `Condition`: This is the condition that is checked before each iteration of the loop. If the condition is true, the loop will continue to run. If the condition is false, the loop will stop.  
+`console.log(i);` - The `Statement`: This is the block of code that is executed for each iteration of the loop. In this case, we are printing the value of `i` to the console.  
+`i++;` - The `Increment Expression`: This is where we increment the loop variable. In this case, we are incrementing `i` by 1 after each iteration of the loop.  
+
+---
+
+### Do...While Loop
+
+`Do...While Loops` are used to execute a block of code at least once, and then continue to execute the block of code as long as a specified condition is true.  
+
+**Basic Syntax**:  
+
+```js
+do {
+    statement
+} while (condition);
+```
+
+**Example**: of a `Do...While Loop` that will print the numbers 1 to 5 to the console.  
+Where the `do` will continue to iterate until the `while` condition is false.  
+
+```js
+let i = 1;
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);
+```
+
+**The Breakdown**:  
+`let i = 1;` - The `Initial Expression`: This is where we initialize the loop variable. In this case, we are initializing `i` to 1.  
+`do` - The `Do Statement`: This is the block of code that is executed at least once. In this case, we are printing the value of `i` to the console.  
+`console.log(i);` - The `Statement`: This is the block of code that is executed for each iteration of the loop. In this case, we are printing the value of `i` to the console.  
+`i++;` - The `Increment Expression`: This is where we increment the loop variable. In this case, we are incrementing `i` by 1 after each iteration of the loop.  
+`while` - The `While Statement`: checks the condition after the block of code has been executed.  
+- If the condition is true, the loop will continue to run from the top of the `do` block.  
+- If the condition is false, the loop will stop.  
+
+
+---
+
+### For...In Loop
+
+`For...In Loops` are used to iterate over the properties of an object.  
+Such as the properties of an object or the elements of an array.  
+
+**Basic Syntax**:  
+
+```js
+for (variable in object) {
+    statement
+}
+```
+
+**Example - For...In Object**:  
+This `For...In Loop` will print the properties of an object to the console.  
+
+```js
+const person = {
+    name: 'John',
+    age: 30
+};
+
+for (let key in person) {
+    console.log(key, person[key]);
+}
+```
+
+**The Breakdown**:  
+`for` - The `For Statement`: This is the block of code that is executed for each iteration of the loop.  
+`let` - The `Variable`: This is the variable that is used to store the property value of the object.  
+`key` - The `Key`: is the property name of the object.  
+`in` - The `In Operator`: This is used to iterate over the properties of an object.  
+`person` - The `Object`: This is the object that we are iterating over.  
+`console.log(key, person[key]);` - The `Statement`: This is the block of code that is executed for each iteration of the loop. In this case, we are printing the property name and value of the object to the console.  
+`[key]` - The `Bracket Notation`: This is used to access the value of the property of the object. This will return the value of the property name stored in the `key` variable and will change on each iteration of the loop until all properties have been printed to the console.  
+
+**Example - For...In Array**:  
+This `For...In Loop` will print the elements of an array to the console.  
+
+```js
+const colors = ['red', 'blue', 'green'];
+
+for (let index in colors) {
+    console.log(index, colors[index]);
+}
+```
+
+**The Breakdown**:
+`for` - The `For Statement` is the block of code that is executed for each iteration of the loop.  
+`let` - The `Variable` is the variable that is used to store the index value of the array.  
+`index` - The `Index` is the index value of the array.  
+`in` - The `In Operator` is used to iterate over the elements of an array.  
+`colors` - The `Array` is the array that we are iterating over.  
+`console.log(index, colors[index]);` - This is the `Statement` it's the block of code that is executed for each iteration of the loop. In this case, we are printing the `index value` and the `element` of the array to the console.  
+`[index]` - The `Bracket Notation` is used to access the element of the array. This will return the element of the array stored in the `index` variable and increment up by 1 on each iteration of the loop until all elements have been printed to the console.  
+
+> NOTE: the `For...In Loop` is not recommended for iterating over arrays as it can be slow and can have unexpected results.  
+> The best practice is to use the `For...Of Loop` when iterating over the elements of an array, which we will cover next.  
+
+---
+
+### For...Of Loop
+
+`For...Of Loops` are used to iterate over the elements of an array.  
+Similar to the `For...In Loop` but is specifically used to iterate over the elements of an array.  
+
+**Basic Syntax**:  
+
+```js
+for (variable of object) {
+    statement
+}
+```
+
+**Example**: of a `For...Of Loop` that will print the elements of an array to the console.  
+
+```js
+const colors = ['red', 'blue', 'green'];
+
+for (let color of colors) {
+    console.log(color);
+}
+```
+
+**The Breakdown**:
+`for` - The `For Statement` is the block of code that is executed for each iteration of the loop.  
+`let` - The `Variable` is the variable that is used to store the element value of the array.  
+`of` - The `Of Operator` is used to iterate over the elements of an array.  
+`colors` - The `Array` is the array that we are iterating over.
+`console.log(color);` - This is the `Statement` it's the block of code that is executed for each iteration of the loop. In this case, we are printing the `element` of the array to the console.  
+
+---
+
+
+## Truthy and Falsy Values
+
+### Falsy Values
+
+In JavaScript, a value is considered falsy if it evaluates to false when checked in a Boolean context.  
+There are exactly six falsy values:  
+
+The boolean - `false`  
+The number zero `0` - including Negative zero `-0`  
+Empty strings such as: double quotes `""`, single quotes or `''`, or backticks ``` `` ```  
+Null value - `null`  
+Undefined value - `undefined`  
+Not a Number - `NaN`  
+
+### Truthy Values
+
+Any value in JavaScript that is not one of the falsy values listed above is considered truthy.  
+
+All objects (`{}`, `[]`, etc.)  
+All `non-zero` numbers (including negative numbers)  
+All `strings`, including whitespace `" "` and strings with zero `"0"`  
+The boolean `true`  
+All function references such as `function() {}` & `() => {}`  
+
+Essentially, any value that is not explicitly falsy is truthy in JavaScript, which covers a wide range of data types and values. This concept is fundamental to understanding and effectively utilizing conditionals and logical operations in JavaScript.  
