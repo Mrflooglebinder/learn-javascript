@@ -28,6 +28,9 @@ function Square(size) {
 }
 Square.prototype = Object.create(Shape.prototype);
 
+// Reset the constructor
+Square.prototype.constructor = Square;
+
 const sh = new Shape();
 const c = new Circle(1);
 const s = new Square(1);
